@@ -1,16 +1,15 @@
 import React, {useState, useRef, useEffect} from 'react';
 import styles from './Library.module.css'
 import AddButton from './../../assets/img/add.svg'
-import EditButton from './../../assets/img/edit.svg'
-// import DeleteButton from './../../assets/img/delete.svg'
+import DeleteButton from './../../assets/img/delete.svg'
 
 export const Library = ({library, setLibrary}) => {
+
+    const input = useRef()
 
     useEffect(() => {
         input.current.focus()
     }, [])
-
-    const input = useRef()
 
     const [newWord, setNewWord] = useState('')
 
@@ -19,7 +18,9 @@ export const Library = ({library, setLibrary}) => {
     }
 
     const deleteWord = (id) => {
-        setLibrary(library.filter((word, index) => index!== id))
+        const updateLibrary = library.filter((word, index) => index!== id)
+        setLibrary(updateLibrary)
+        localStorage.setItem('library', JSON.stringify(updateLibrary))
         setNewWord('')
     }
 
@@ -27,7 +28,9 @@ export const Library = ({library, setLibrary}) => {
         event.preventDefault()
         const translation = await fetch(`http://tmp.myitschool.org/API/translate/?source=ru&target=en&word=${newWord}`)
         const result = await translation.json()
-        setLibrary([...library, {word: newWord,translate: result.translate}])
+        const updateLibrary = [...library, {word: newWord, translate: result.translate}]
+        setLibrary(updateLibrary)
+        localStorage.setItem('library', JSON.stringify(updateLibrary))
         input.current.value = ''
     }
 
@@ -69,11 +72,8 @@ export const Library = ({library, setLibrary}) => {
 
                            <div className={styles.settings}>
                                <button onClick={() => deleteWord(index)}>
-                                   <img src={EditButton} alt=""/>
+                                   <img src={DeleteButton} alt=""/>
                                </button>
-                               {/*<button>*/}
-                                   {/*<img src={DeleteButton} alt=""/>*/}
-                               {/*</button>*/}
                            </div>
                        </ul>
                        )

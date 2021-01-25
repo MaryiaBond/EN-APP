@@ -14,7 +14,7 @@ import {NavLink} from "react-router-dom";
 
 export const Games = () => {
     const games = [
-        {img: imgCheckCorrect, path: 'library', name: 'Speak and check', description: 'Say the word on the screen and check your spelling'},
+        {img: imgCheckCorrect, path: 'check-it', name: 'Speak and check', description: 'Say the word on the screen and check your spelling'},
         {img: imgSelectTranslation, path: 'select-translation', name: 'Speak and check', description: 'Say the word on the screen and check your spelling'},
         {img: imgSprintQuess, path: 'sprint-guess', name: 'Speak and check', description: 'Say the word on the screen and check your spelling'},
 

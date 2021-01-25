@@ -36,6 +36,11 @@
     background-color: #e9eef2;
     padding: 12px;
     box-sizing: border-box;
+    transition: .6s;
+}
+
+.gameBlock:hover {
+    transform: scale(1.05);
 }
 
 .gameContainer a > div {
