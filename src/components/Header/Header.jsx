@@ -7,9 +7,9 @@ import {NavLink} from "react-router-dom";
 export const Header = () => {
     return (
         <header className={style.header}>
-            {/*<NavLink to='/'>*/}
+            <NavLink to='/'>
                 <Logo />
-            {/*</NavLink>*/}
+            </NavLink>
             <Nav />
         </header>
     )

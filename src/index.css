@@ -5,6 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 code {
@@ -19,4 +21,17 @@ code {
 
 body, input, img {
   background-color: #E5E5E5;
+}
+
+button:focus {
+  outline: none;
+}
+
+button, a {
+  transition: .6s;
+  cursor: pointer;
+}
+
+button:hover, a:hover {
+  opacity: .6;
 }
