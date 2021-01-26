@@ -10,9 +10,8 @@ body {
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace1;
+    monospace;
 }
-
 * {
   font-family: Montserrat, serif;
   color: #0A2E52;
