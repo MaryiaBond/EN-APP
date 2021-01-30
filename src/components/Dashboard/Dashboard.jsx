@@ -2,7 +2,7 @@ import React from 'react';
 import style from './Dashboard.module.css'
 import PlayButton from './../../assets/img/play.svg'
 
-export const Dashboard = () => {
+export const Dashboard = (props) => {
     return (
         <section className={style.dashboardContainer}>
            <div className={style.gameBlock}>
@@ -22,12 +22,12 @@ export const Dashboard = () => {
                     Common score
                 </span>
 
-                <h3>263 points</h3>
+                <h3>{props.points} points</h3>
             </div>
             <div className={style.levelBlock}>
                 <span>Level</span>
 
-                <h3>7 Level</h3>
+                <h3>{(0.2 * Math.sqrt(props.points)).toFixed()} Level</h3>
 
                 <p>
                     Learn 750 new words in one course

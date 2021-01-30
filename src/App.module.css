@@ -18,7 +18,7 @@ h3 {
     box-shadow: inset 1px 1px 4px rgba(0, 0, 0, 0.69), inset -2px -2px 15px rgba(255, 255, 255, 0.79), inset 2px 2px 15px rgba(10, 46, 82, 0.44);
 }
 
-.btnBack {
+.btnBack, .btnNext {
     box-shadow: 2px 2px 5px rgba(10, 46, 82, 0.16), -8px -8px 40px rgba(255, 255, 255, 0.56), 8px 8px 15px rgba(0, 0, 0, 0.17);
     border-radius: 50px;
     background-image: url("./assets/img/arrow.svg");
@@ -28,6 +28,13 @@ h3 {
     background-size: 45px;
     border: none;
     background-position: center;
+}
+
+.btnNext {
+    transform: scale(-1, 1);
+    width: 190px;
+    margin: 100px auto;
+    cursor: pointer;
 }
 
 .results {

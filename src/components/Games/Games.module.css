@@ -60,3 +60,17 @@
     column-gap: 30px;
     justify-items: center;
 }
+
+@media (max-width: 1200px) {
+    .gameBlock img {
+        max-height: 50%;
+        top: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .gameContainer {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
